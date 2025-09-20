@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポケモン相性クイズ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="pokemon-type-quiz">
+
+    <div id="main-container">
+        <h1>ポケモン相性クイズ</h1>
+        
+        <div id="start-screen">
+            <div class="quiz-description">
+                <h3>あそびかた</h3>
+                <p>
+                    指定されたタイプのポケモンに「こうかばつぐん」となるタイプをすべて選んでください。
+                    <br>
+                    すべての問題に解答するまでのタイムを競います。
+                    <br>
+                    問題は全部で <span id="total-question-count"></span> 問です。
+                </p>
+            </div>
+            <button id="start-btn">クイズをはじめる</button>
+            <button id="mypage-btn">マイページ</button>
+            
+            <div id="ranking-display">
+                <h3>ハイスコアランキング</h3>
+                <table id="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>プレイ日時</th>
+                            <th>スコア</th>
+                            <th>正答率</th>
+                            <th>タイム</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <button id="clear-rankings-btn">ランキングをリセット</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <p id="question-counter"></p>
+            <h3 id="question-text"></h3>
+            <div id="options-container"></div>
+            <button id="submit-answer-btn">解答を確定する</button>
+            <div id="feedback"></div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2>結果発表</h2>
+            <p>
+                正解数: <span id="correct-count">0</span> / <span id="total-count">0</span>
+                (<span id="accuracy">0</span>%)
+            </p>
+            <p>合計タイム: <span id="total-time">0.00</span>秒</p>
+            
+            <hr>
+
+            <div id="ranking-form">
+                <button id="save-score-btn">スコアを記録する</button>
+            </div>
+            
+            <button id="restart-btn">もう一度挑戦</button>
+        </div>
+
+        <div id="mypage-screen" class="hidden">
+            <div id="stats-display">
+                <h3>問題別 正答率</h3>
+                <table id="stats-table">
+                    <thead>
+                        <tr>
+                            <th>問題（攻撃タイプ）</th>
+                            <th>正答率</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <button id="clear-stats-btn">正答率をリセット</button>
+            <button id="dark-mode-toggle">モード切替</button>
+            <button id="back-to-start-btn">戻る</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
